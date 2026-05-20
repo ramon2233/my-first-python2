@@ -54,7 +54,7 @@ def color_transfer(source_img, target_img):
 # 2. Streamlit 웹 화면 UI 및 실행부 (기존 로컬 경로설정/반복문 대체)
 # =================================================================
 st.set_page_config(page_title="Color Transfer App", layout="wide")
-st.title("🎨 이미지 색상 전송(Color Transfer) 프로그램")
+st.title("🎨 이미지 색상 변환(Color Transfer) 프로그램")
 st.write("기준 이미지의 색감 스타일에 맞춰 대상 이미지들의 색상을 자동으로 변경합니다.")
 
 # --- 사이드바: 파일 업로드 공간 ---
@@ -62,14 +62,14 @@ st.sidebar.header("📁 이미지 업로드")
 
 # 기준 이미지 1장 업로드 (기존 ref_folder 대체)
 uploaded_ref = st.sidebar.file_uploader(
-    "1. 기준 이미지(Reference)를 올려주세요", 
+    "1. 색감의 기준이 될 이미지를 선택하세요(한장만 가능합니다)", 
     type=["jpg", "jpeg", "png"], 
     key="ref_loader"
 )
 
 # 변경할 이미지들 여러 장 업로드 (기존 change_folder 대체)
 uploaded_changes = st.sidebar.file_uploader(
-    "2. 변환할 대상 이미지들(Change)을 모두 선택하세요", 
+    "2. 변환할 대상 이미지들을 모두 선택하세요", 
     type=["jpg", "jpeg", "png"], 
     accept_multiple_files=True,
     key="change_loader"
